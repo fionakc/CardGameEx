@@ -67,8 +67,11 @@ public class test {
 //			System.out.println(testList.get(i).getSuit());
 //		}
 		
-		Blackjack g1=new Blackjack();
-		g1.play();
+//		Blackjack g1=new Blackjack();
+//		g1.play();
+		
+		Poker p1=new Poker();
+		p1.play();
 		
 	} //end main
 	
