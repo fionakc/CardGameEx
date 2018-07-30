@@ -41,6 +41,14 @@ public class Hand {
 		updateSize();
 	}
 	
+	public void addCard(String s, int r) {
+		if(this.canResize) {
+			Card temp=new Card(s,r);
+			this.cards.add(temp);
+		}
+		updateSize();
+	}
+	
 	public void replaceCard(int i, Card cNew) {
 		if(this.canReplace && i>=0 && i<this.size) {
 			this.cards.set(i, cNew);

@@ -13,6 +13,13 @@ public class Poker {
 		for(int i=0;i<5;i++) { //only 5 cards in the hand
 			hand.addCardRand();
 		}
+		//testing specific combos
+//		hand.addCard("Spade", 12);
+//		hand.addCard("Spade", 11);
+//		hand.addCard("Diamond", 13);
+//		hand.addCard("Spade", 1);
+//		hand.addCard("Spade", 10);
+		
 		calcHandRank();
 	}
 	
@@ -100,10 +107,13 @@ public class Poker {
 	public boolean checkStraightFlush(ArrayList<Card> c) {
 		Collections.sort(c, suitRank);
 		boolean flush=false;
+		//System.out.println("flush is "+flush);
 		if(c.get(0).getSuitVal()==c.get(4).getSuitVal()) { //if first and last suit are the same after sorting
 			flush = checkStraight(c,0); //check if Straight with aceLow
+			//System.out.println("flush is "+flush);
 			if(!flush) {				//if not
 				flush=checkStraight(c,1); //check if Straight with aceHigh
+				//System.out.println("flush is "+flush);
 			}
 		} 
 		return flush;
@@ -147,18 +157,32 @@ public class Poker {
 	public boolean checkStraight(ArrayList<Card> c, int a) {	//5 in a row, any suit	
 		boolean same=false;
 		if(a==0) {
+			//System.out.println("sort aceLow");
 			Collections.sort(c, aceLow);
 		} else {
+			//System.out.println("sort aceHigh");
 			Collections.sort(c, aceHigh);
 		}
 		for(int i=0;i<c.size()-1;i++) {
-			if(c.get(i).getSuitVal()==(c.get(i+1).getSuitVal()-1)) { //if c(i) = c(i)-1
+			//System.out.println("loop "+i);
+			//System.out.println(c.get(i+1).getRank());
+			//System.out.println(c.get(i).getRank());
+			if(c.get(i+1).getRank()-c.get(i).getRank()==1) { //if c(i) = c(i)-1 
+				
 				same=true;
+				//System.out.println("same is "+same);
+			} else if(c.get(4).getRank()==1 && c.get(3).getRank()==13){
+				same=true;
+				//System.out.println("last is ace");
 			} else {
+			
+				
 				same=false;
+				//System.out.println("same is "+same);
 				break;
 			}
 		}		
+		//System.out.println("returning "+same);
 		return same;
 	} //end checkStraight
 	
