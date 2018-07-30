@@ -28,9 +28,15 @@ public class Hand {
 		this.size=s;
 	}
 	
-	public void addCard(Card cNew) {
+	public void addCardRand() { //need to check if any the same
 		if(this.canResize) {
-			this.cards.add(cNew);
+			Card temp=new Card();
+			
+			while(checkCollide(temp)) {
+				Card t=new Card();
+				temp=t;
+			}
+			this.cards.add(temp);
 		}
 		updateSize();
 	}
@@ -42,4 +48,19 @@ public class Hand {
 		updateSize();
 	}
 	
+	public boolean checkCollide(Card c) {
+			
+		boolean collides=false;
+		for(int i=0;i<cards.size();i++) {
+			if(cards.get(i).getRank()==c.getRank() && cards.get(i).getSuitVal()==c.getSuitVal()) {
+				collides =true;
+				break;
+			}
+		}
+		return collides;
+	}
+	
+	public ArrayList<Card> returnList(){
+		return cards;
+	}
 }

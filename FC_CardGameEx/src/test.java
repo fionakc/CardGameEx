@@ -23,28 +23,54 @@ public class test {
 		Card c6=new Card("Spade",13);
 		
 		//add cards into arraylist
-		testList.add(c1);
-		testList.add(c2);
-		testList.add(c3);
-		testList.add(c4);
-		testList.add(c5);
-		testList.add(c6);
+//		testList.add(c1);
+//		testList.add(c2);
+//		testList.add(c3);
+//		testList.add(c4);
+//		testList.add(c5);
+//		testList.add(c6);
 		
-		System.out.println("TestList");
-		for(int i=0;i<testList.size();i++) {
-			System.out.println(testList.get(i).getRank());
-		}
+//		System.out.println("TestList");
+//		for(int i=0;i<testList.size();i++) {
+//			System.out.println(testList.get(i).getRank());
+//		}
 		
-		Collections.sort(testList,aceLow);
+		//Collections.sort(testList,aceLow);
 		//Collections.sort(testList, aceHigh);
 		//Collections.sort(testList, suitRank);
 		
-		System.out.println("TestList");
-		for(int i=0;i<testList.size();i++) {
-			System.out.println(testList.get(i).getRank());
-		}
 		
-	}
+		
+//		for(int i=0;i<20;i++) {
+//			Card cTemp=new Card();
+//			System.out.println(cTemp.getRank());
+//			testList.add(cTemp);
+//		}
+		
+//		Card cTemp1=new Card();
+//		System.out.println(cTemp1.getRank());
+//		testList.add(cTemp1);
+//		Card cTemp2=new Card();
+//		System.out.println(cTemp2.getRank());
+//		testList.add(cTemp2);
+//		Card cTemp3=new Card();
+//		System.out.println(cTemp3.getRank());
+//		testList.add(cTemp3);
+//		Card cTemp4=new Card();
+//		System.out.println(cTemp4.getRank());
+//		testList.add(cTemp4);
+//		
+//		
+//		System.out.println("TestList");
+//		for(int i=0;i<testList.size();i++) {
+//			System.out.println(testList.get(i).getRank());
+//			System.out.println(testList.get(i).getSuit());
+//		}
+		
+		Blackjack g1=new Blackjack();
+		g1.play();
+		
+	} //end main
 	
 	
 	
