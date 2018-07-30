@@ -10,8 +10,8 @@ public class test {
 		List<Card> testList=new ArrayList<>();
 		//also need AceLow object
 		AceLow aceLow=new AceLow();
-		AceHigh aceHigh=new AceHigh();
-		SuitRank suitRank=new SuitRank();
+		//AceHigh aceHigh=new AceHigh();
+		//SuitRank suitRank=new SuitRank();
 		
 		
 		//create some cards
@@ -32,16 +32,16 @@ public class test {
 		
 		System.out.println("TestList");
 		for(int i=0;i<testList.size();i++) {
-			System.out.println(testList.get(i).getSuit());
+			System.out.println(testList.get(i).getRank());
 		}
 		
-		//Collections.sort(testList,aceLow);
+		Collections.sort(testList,aceLow);
 		//Collections.sort(testList, aceHigh);
-		Collections.sort(testList, suitRank);
+		//Collections.sort(testList, suitRank);
 		
 		System.out.println("TestList");
 		for(int i=0;i<testList.size();i++) {
-			System.out.println(testList.get(i).getSuit());
+			System.out.println(testList.get(i).getRank());
 		}
 		
 	}
